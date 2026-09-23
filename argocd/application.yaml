@@ -1,26 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-
 metadata:
   name: java-devops-sample
-
   namespace: argocd
-
 spec:
   project: default
-
   source:
     repoURL: https://github.com/nimmadalaprudhvi/java-devops-gitops.git
     targetRevision: main
     path: apps/java-devops-sample
-
   destination:
     server: https://kubernetes.default.svc
-    namespace: java-devops-sample
-
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true

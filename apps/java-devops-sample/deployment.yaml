@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-devops-sample
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-devops-sample
+  template:
+    metadata:
+      labels:
+        app: java-devops-sample
+    spec:
+      containers:
+        - name: java-devops-sample
+          image: ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/java-devops-sample:INITIAL_IMAGE_TAG
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
