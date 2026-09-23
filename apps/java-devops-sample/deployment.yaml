@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: java-devops-sample
-          image: 400714277648.dkr.ecr.ap-south-1.amazonaws.com/java-devops-sample:INITIAL_IMAGE_TAG
+          image: 400714277648.dkr.ecr.ap-south-1.amazonaws.com/java-devops-sample:c3c16272e3b0ff86c23bdb7aafb70ec7e75d2e2c
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
